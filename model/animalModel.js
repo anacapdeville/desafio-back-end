@@ -7,6 +7,14 @@ const findAllAnimals = async (email) => {
   return animals;
 };
 
+const newAnimal = async (nome, classe, description, image) => {
+  await connection.execute(
+    'INSERT INTO animals (name, class, description, image) VALUES (?,?,?,?)',
+    [nome, classe, description, image],
+  );
+};
+
 module.exports = {
   findAllAnimals,
+  newAnimal,
 }

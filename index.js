@@ -1,12 +1,12 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const cors = require('cors');
 const userController = require('./controller/userController');
 const animalController = require('./controller/animalController');
 
 const app = express();
 
-app.use(bodyParser.json());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use('/images', express.static(`${__dirname}/images`));
 
