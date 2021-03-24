@@ -8,9 +8,9 @@ router.get('/animals', async (req, res) => {
   try {
     const animals = await animalService.findAllAnimals();
 
-    return res.status(200).json(animals)
+    return res.status(200).json(animals);
   } catch (error) {
-    return res.status(500).json({ message: error.message })
+    return res.status(500).json({ message: error.message });
   }
 });
 
@@ -29,7 +29,7 @@ router.post('/upload', upload.single('file'), (req, res) => {
   try {
     res.send().status(200);
   } catch (error) {
-    res.status(500).json({ message: error.message })
+    res.status(500).json({ message: error.message });
   }
 });
 
@@ -41,7 +41,7 @@ router.post('/newanimal', animalService.validateFields, async (req, res) => {
 
     return res.status(200).json({ message: "animal cadastrado" });
   } catch (error) {
-    return res.status(500).json({ message: error.message })
+    return res.status(500).json({ message: error.message });
   }
 });
 

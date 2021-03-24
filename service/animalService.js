@@ -16,4 +16,4 @@ module.exports = {
   findAllAnimals,
   newAnimal,
   validateFields,
-}
+};
